@@ -1,0 +1,140 @@
+/* Reset básico */
+* {
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fundo com imagem */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url("Mickey.jpg") no-repeat center center fixed; 
+  background-size: cover; /* faz a imagem ocupar toda a tela */
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(34, 30, 30, 0.6); /* camada escura transparente */
+  z-index: -1; /* fica atrás do conteúdo */
+}
+
+/* Container principal */
+.main {
+  background: #4e0000;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  text-align: center;
+  width: 320px;               /* caixa proporcional */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;                  /* espaçamento uniforme */
+}
+
+/* Tempo dentro de círculo */
+.time {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #941b1b;
+  width: 160px;
+  height: 160px;
+  border: 6px solid #d22a2a;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e2d2d2;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Turnos e modo */
+.turns, .time-mode {
+  font-size: 1.2rem;
+  color: #f7f3f3;
+}
+
+/* Container dos botões */
+.buttons {
+  display: flex;
+  justify-content: center; /* centraliza */
+  gap: 20px;               /* espaço entre os botões */
+  width: 100%;
+  margin-top: 15px;
+}
+
+/* Botões */
+button {
+  background: #c42a2a;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 25px;
+  width: 140px;             /* largura proporcional */
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #781313;
+  transform: scale(1.05);
+}
+
+/* Configurações (drop content) */
+#drop-content {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.select-options label {
+  display: block;
+  font-size: 0.9rem;
+  color: #fcecec;
+}
+
+select {
+  width: 200px;               /* largura fixa */
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+/* Botão de engrenagem + texto */
+.config-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #c42a2a;
+  border-radius: 25px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.config-button:hover {
+  background: #781313;
+  transform: scale(1.05);
+}
+
+.config-button .icon-cog {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.config-tooltip-text {
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 500;
+}

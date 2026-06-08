@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="main">
+        <audio id="notification">
+            <source src="over-the-horizon-bts-64kbps.mp3" />
+        </audio>
+
+        <div class="turns animate-slide-in-down">1/4</div>
+        <div class="time">00:00</div>
+
+        <div class="config-button">
+            <span class="icon-cog" id="toggle-config">⚙️</span>
+            <span class="config-tooltip-text">Configurar</span>
+        </div>
+
+
+        <div id="drop-content">
+            <div class="select-options">
+                <label for="work-time-options">Tempo:</label>
+                <select id="work-time-options" name="work-time-options" onchange="reset()">
+                    <option value="25">25 minutos</option>
+                    <option value="35">35 minutos</option>
+                    <option value="45">45 minutos</option>
+                    <option value="55">55 minutos</option>
+                </select>
+
+                <label for="total-turns-options">Turnos:</label>
+                <select id="total-turns-options" name="total-turns-options" onchange="reset()">
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4" selected>4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="time-mode animate-zoom-in">Trabalho</div>
+
+        <div class="buttons">
+            <button class="timer-control animate-slide-in-down">Iniciar</button>
+            <button class="reset-button animate-slide-in-down">Reiniciar</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
